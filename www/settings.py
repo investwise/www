@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import os
-import django.http
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,6 +141,18 @@ STATIC_URL = '/static/'
 
 # debug_toolbar
 # INTERNAL_IPS = request.META('REMOTE_ADDR')
+def custom_show_toolbar(request.META.get('HTTP_X_REAL_IP', None) in INTERNAL_IPS):
+    return True
+# Show toolbar, if the IP returned from HTTP_X_REAL_IP IS listed as INTERNAL_IPS in settings
+    if request.is_ajax():
+        return False
+# Show toolbar, if the request is not ajax
+    return bool(settings.DEBUG)
+# show toolbar if debug is true
+
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+}
 
 '''
 https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-STATICFILES_DIRS
