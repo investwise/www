@@ -18,7 +18,7 @@ def news(request):
 
             # html2text logic
             news.save()
-            # return redirect('post_detail', pk=post.pk)
+            return redirect('news')
     else:
         form = NewsURL()
     return render(request, 'testNews/post_edit.html', {'form': form})
