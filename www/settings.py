@@ -141,7 +141,7 @@ STATIC_ROOT = u'/home/investwise/www/static'
 STATIC_URL = '/static/'
 
 # debug_toolbar
-INTERNAL_IPS = request.META('REMOTE_ADDR')
+# INTERNAL_IPS = request.META('REMOTE_ADDR')
 
 '''
 https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-STATICFILES_DIRS
