@@ -15,16 +15,14 @@ def news(request):
             news = form.save(commit=False)
             news.url = request.user
             news.time = timezone.now()
-
             # html2text logic
+            news.title = 'test title'
+            news.text = 'test 1 2 3'
             news.save()
-
-
-
-            # return redirect('news')
+            return render(request, 'testNews/news.html', {'news': news})
     else:
         form = NewsURL()
-    return render(request, 'testNews/news.html', {'form': form})
+        return render(request, 'testNews/news.html', {'form': form})
 
 '''
 def post_detail(request, pk):

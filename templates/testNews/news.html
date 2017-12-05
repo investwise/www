@@ -1,10 +1,13 @@
 {% extends 'testNews/base.html' %}
 
-{% block content %}
+
     <h1>URL:</h1>
     <form method="POST" class="post-form">
         {% csrf_token %} <!-- makes form secure - important -->
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Go</button>
     </form>
-{% endblock %}
+
+    {% if news %}
+    Yes
+    <% endif %}
