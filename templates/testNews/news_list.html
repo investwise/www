@@ -8,10 +8,11 @@
                </div>
        </div>
        <h1>
-
            {{ news.title }}
         PK:  {{ news.pk }}
+        URL: {{ news.url }}
        </h1>
        <p>{{ news.text|linebreaksbr }}</p>
+
        {% endfor %}
        {% endblock %}

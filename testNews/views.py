@@ -14,7 +14,7 @@ def news(request):
         form = NewsURL(request.POST)
         if form.is_valid():
             news = form.save(commit=False)
-            news.url = request.user
+            # news.url = request.user
             news.time = timezone.now()
             # html2text logic
             news.title = 'test title'
