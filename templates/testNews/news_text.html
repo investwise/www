@@ -1,0 +1,14 @@
+{% extends 'testNews/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if news.date %}
+            <div class="date">
+                {{ news.date }}
+            </div>
+        {% endif %}
+
+        <h1>{{ news.title }}</h1>
+        <p>{{ news.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
