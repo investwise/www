@@ -19,8 +19,9 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^', include('tutBlog.urls')),
+    url(r'^blog/', include('tutBlog.urls')),
     url(r'^', include('testNews.urls')),
+
 ]
 
 if settings.DEBUG:
