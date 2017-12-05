@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'www.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,9 +93,8 @@ DATABASES = {
     #'NAME': 'investwise$test_default',
     #      }
 }
-
-
 '''
+
 # this uses SQLite3; using MYSQL
 DATABASES = {
     'default': {
@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
