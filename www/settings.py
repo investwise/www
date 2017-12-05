@@ -54,6 +54,12 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
+MIDDLEWARE_CLASSES = (
+# ...
+'debug_toolbar.middleware.DebugToolbarMiddleware',
+# ...
+)
+
 ROOT_URLCONF = 'www.urls'
 
 TEMPLATES = [
@@ -134,7 +140,7 @@ STATIC_ROOT = u'/home/investwise/www/static'
 STATIC_URL = '/static/'
 
 # debug_toolbar
-INTERNAL_IPS = ALLOWED_HOSTS
+INTERNAL_IPS = request.META('REMOTE_ADDR')
 
 '''
 https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-STATICFILES_DIRS
