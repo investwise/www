@@ -54,12 +54,6 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-MIDDLEWARE_CLASSES = (
-# ...
-'debug_toolbar.middleware.DebugToolbarMiddleware',
-# ...
-)
-
 ROOT_URLCONF = 'www.urls'
 
 TEMPLATES = [
