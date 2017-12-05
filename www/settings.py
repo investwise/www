@@ -135,3 +135,11 @@ STATIC_URL = '/static/'
 
 # debug_toolbar
 INTERNAL_IPS = ALLOWED_HOSTS
+
+'''
+https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-STATICFILES_DIRS
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+'''
