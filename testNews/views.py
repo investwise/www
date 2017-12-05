@@ -22,8 +22,7 @@ def news(request):
             return redirect('news_text', pk=news.pk)
     else:
         form = NewsURL()
-
-return render(request, 'testNews/news.html', {'form': form})
+    return render(request, 'testNews/news.html', {'form': form})
 
 def news_text(request, pk):
     news = get_object_or_404(NewsItem, pk=pk)
