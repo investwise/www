@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [u'www.investwise.io', '127.0.0.1',]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'www.urls'
@@ -132,3 +132,6 @@ MEDIA_ROOT = u'/home/investwise/www/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = u'/home/investwise/www/static'
 STATIC_URL = '/static/'
+
+# debug_toolbar
+INTERNAL_IPS = ALLOWED_HOSTS
