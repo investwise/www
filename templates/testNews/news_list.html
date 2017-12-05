@@ -8,9 +8,9 @@
                </div>
        </div>
        <h1>
-         <!-- <a href="{% url 'post_detail' pk=post.pk %}"> -->
+
            {{ news.title }}
-         <!-- </a> -->
+        PK:  {{ news.pk }}
        </h1>
        <p>{{ news.text|linebreaksbr }}</p>
        {% endfor %}
