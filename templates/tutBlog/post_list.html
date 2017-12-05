@@ -1,10 +1,13 @@
-{% extends 'tutBlog/base.html' %}
+{% extends 'blog/base.html' %}
 
-{% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">
-        {% csrf_token %} <!-- makes form secure - important -->
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-{% endblock %}
+       {% block content %}
+       {% for post in posts %}
+       <div class="post">
+             <div class="date">
+                 published: {{ post.published_date }}
+               </div>
+       </div>
+       <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+       <p>{{ post.text|linebreaksbr }}</p>
+       {% endfor %}
+       {% endblock %}
