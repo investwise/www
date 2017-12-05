@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import NewsItem
 from django.utils import timezone
+
+from .models import NewsItem
+from .forms import NewsURL
 
 def news_list(request):
     newsList = NewsItem.objects.filter(time__lte=timezone.now()).order_by('time')
@@ -8,15 +10,15 @@ def news_list(request):
 
 def news(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = NewsURL(request.POST)
         if form.is_valid():
             news = form.save(commit=False)
             news.url = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            # return redirect('post_detail', pk=post.pk)
     else:
-        form = PostForm()
+        form = NewsURL()
     return render(request, 'testNews/post_edit.html', {'form': form})
 
 '''
