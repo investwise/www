@@ -7,7 +7,7 @@ from html.parser import HTMLParser
 def urlToText(url):
 
     test_url = 'http://www.nytimes.com/2017/12/05/sports/olympics/ioc-russia-winter-olympics.html'
-    input_url = test_url
+    input_url = url
 
     # get html
     html = urllib.request.urlopen(input_url).read()
@@ -24,4 +24,4 @@ def urlToText(url):
     h.IGNORE_EMPHASIS = True
     text = h.handle(soup.prettify())
 
-    return title,text 
+    return title,text
