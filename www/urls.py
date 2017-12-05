@@ -20,10 +20,11 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('tutBlog.urls')),
-    url(r'^', include('testNews.urls')),
-
+    url(r'^news/', include('testNews.urls')),
+    url(r'^$', include('testNews.urls')),
 ]
 
+# django debug toolbar
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
