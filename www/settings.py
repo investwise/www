@@ -90,6 +90,7 @@ DATABASES = {
     }
     'TEST': {
           NAME: 'investwise$test_default',
+          }
 }
 
 
