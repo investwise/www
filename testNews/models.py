@@ -4,9 +4,10 @@ from django.utils import timezone
 # Create your models here.
 class NewsItem(models.Model):
     url = models.URLField(max_length=200)
+    time = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    time = models.DateTimeField(default=timezone.now)
+
 
     #def getURL(self):
     #    return self.url

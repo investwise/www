@@ -4,6 +4,7 @@ from django.utils import timezone
 from .models import NewsItem
 from .forms import NewsURL
 
+import urlToText
 
 def news_list(request):
     newsList = NewsItem.objects.filter(time__lte=timezone.now()).order_by('time')
@@ -14,11 +15,13 @@ def news(request):
         form = NewsURL(request.POST)
         if form.is_valid():
             news = form.save(commit=False)
-            # news.url = request.user
             news.time = timezone.now()
-            # html2text logic
-            news.title = 'test title'
-            news.text = 'test 1 2 3'
+
+            #html2text logic
+            news.title, news.text = urlToText(news.url)
+
+            # news.title = 'test title'
+            # news.text = 'test 1 2 3'
             news.save()
             return redirect('news_text', pk=news.pk)
     else:
