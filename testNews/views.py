@@ -21,13 +21,13 @@ def news(request):
             news.title = 'test title'
             news.text = 'test 1 2 3'
             news.save()
-            return redirect('news_text')
+            return redirect('news_text', pk=news.pk)
     else:
         form = NewsURL()
     return render(request, 'testNews/news.html', {'form': form})
 
 def news_text(request):
-    # news = get_object_or_404(NewsItem, pk=pk)
+    news = get_object_or_404(NewsItem, pk=pk)
     return render(request, 'testNews/news_text.html', {'news': news})
 
 
