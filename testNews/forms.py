@@ -4,4 +4,4 @@ from .models import NewsItem
 class NewsURL(forms.ModelForm):
     class Meta:
         model = NewsItem
-        fields = ('URL',)
+        fields = ('url',)

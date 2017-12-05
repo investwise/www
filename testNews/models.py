@@ -8,8 +8,8 @@ class NewsItem(models.Model):
     text = models.TextField()
     time = models.DateTimeField(default=timezone.now)
 
-    def getURL(self):
-        return self.url
+    #def getURL(self):
+    #    return self.url
 
     def __str__(self):
         return self.title
