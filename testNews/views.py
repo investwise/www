@@ -4,9 +4,11 @@ from django.utils import timezone
 from .models import NewsItem
 from .forms import NewsURL
 
+'''
 def news_list(request):
     newsList = NewsItem.objects.filter(time__lte=timezone.now()).order_by('time')
     return render(request, 'testNews/news_list.html', {'newsList':newsList})
+'''
 
 def news(request):
     if request.method == "POST":
@@ -19,13 +21,13 @@ def news(request):
             news.title = 'test title'
             news.text = 'test 1 2 3'
             news.save()
-            return redirect('news_text', pk=news.pk)
+            return redirect('news_text')
     else:
         form = NewsURL()
     return render(request, 'testNews/news.html', {'form': form})
 
-def news_text(request, pk):
-    news = get_object_or_404(NewsItem, pk=pk)
+def news_text(request):
+    # news = get_object_or_404(NewsItem, pk=pk)
     return render(request, 'testNews/news_text.html', {'news': news})
 
 
