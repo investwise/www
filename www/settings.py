@@ -88,9 +88,9 @@ DATABASES = {
         'PASSWORD': 'Nivlekj1.',
         'HOST': 'investwise.mysql.pythonanywhere-services.com',
     }
-    'TEST': {
-         'NAME': 'investwise$test_default',
-          }
+    #'TEST': {
+    #'NAME': 'investwise$test_default',
+    #      }
 }
 
 
