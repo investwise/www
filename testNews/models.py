@@ -9,7 +9,7 @@ class NewsItem(models.Model):
     time = models.DateTimeField(default=timezone.now)
 
     def getURL(self):
-        return self.news_url
+        return self.url
 
     def __str__(self):
         return self.title
