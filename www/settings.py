@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o$e%n(+injv2xtbyt)+cnur!t+u)wi%=*-k-a$rga_0x+=f6m#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [u'www.investwise.io', '127.0.0.1',]
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'www.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['www/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
