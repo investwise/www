@@ -21,7 +21,7 @@ def news(request):
             news.title = 'test title'
             news.text = 'test 1 2 3'
             news.save()
-            return redirect('news_text')
+            return redirect('news_text', {'news': news})
     else:
         form = NewsURL()
     return render(request, 'testNews/news.html', {'form': form})
