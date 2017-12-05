@@ -134,7 +134,7 @@ STATIC_ROOT = u'/home/investwise/www/static'
 STATIC_URL = '/static/'
 
 # debug_toolbar
-INTERNAL_IPS = ['38.88.208.110']
+INTERNAL_IPS = ['38.88.208.110', '10.0.0.132']
 '''
 def custom_show_toolbar(request.META.get('HTTP_X_REAL_IP', None) in INTERNAL_IPS):
     return True

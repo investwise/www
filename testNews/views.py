@@ -14,8 +14,10 @@ def news(request):
         if form.is_valid():
             news = form.save(commit=False)
             news.url = request.user
-            post.published_date = timezone.now()
-            post.save()
+            news.time = timezone.now()
+
+            # html2text logic
+            news.save()
             # return redirect('post_detail', pk=post.pk)
     else:
         form = NewsURL()
