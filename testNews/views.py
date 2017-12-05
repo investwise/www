@@ -4,11 +4,11 @@ from django.utils import timezone
 from .models import NewsItem
 from .forms import NewsURL
 
-'''
+
 def news_list(request):
     newsList = NewsItem.objects.filter(time__lte=timezone.now()).order_by('time')
     return render(request, 'testNews/news_list.html', {'newsList':newsList})
-'''
+
 
 def news(request):
     if request.method == "POST":
