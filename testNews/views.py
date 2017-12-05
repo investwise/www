@@ -4,7 +4,7 @@ from django.utils import timezone
 from .models import NewsItem
 from .forms import NewsURL
 
-from urlToText import urlToText
+from .urlToText import urlToText
 
 def news_list(request):
     newsList = NewsItem.objects.filter(time__lte=timezone.now()).order_by('time')
