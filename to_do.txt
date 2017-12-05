@@ -1,0 +1,25 @@
+tutorials
+
+sql queryset fuctions
+
+packages
+
+django-debug-toolbar
+highcharts
+django-rest-pandas
+django-mysql
+watson search
+autocomplete
+data pull
+data analytics
+
+django-filter
+django-activeurl
+
+MODEL EXTENSIONS
+
+
+front end
+
+bootstrap templates
+
