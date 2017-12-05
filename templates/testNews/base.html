@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/tutBlog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <title> test news app</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<div><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></div>
+{% endif %}
+    <div class="page-header">
+    <h1><a href="/">News to Text</a></h1>
+</div>
+
+    <div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+       {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

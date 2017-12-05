@@ -1,0 +1,17 @@
+{% extends 'testNews/base.html' %}
+
+       {% block content %}
+       {% for news in newsList %}
+       <div class="post">
+             <div class="date">
+                 published: {{ news.time }}
+               </div>
+       </div>
+       <h1>
+         <!-- <a href="{% url 'post_detail' pk=post.pk %}"> -->
+           {{ news.title }}
+         <!-- </a> -->
+       </h1>
+       <p>{{ news.text|linebreaksbr }}</p>
+       {% endfor %}
+       {% endblock %}
