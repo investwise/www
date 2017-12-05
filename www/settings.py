@@ -89,7 +89,7 @@ DATABASES = {
         'HOST': 'investwise.mysql.pythonanywhere-services.com',
     }
     'TEST': {
-          NAME: 'investwise$test_default',
+         'NAME': 'investwise$test_default',
           }
 }
 
