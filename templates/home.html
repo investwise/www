@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,6 +31,10 @@
         </li>
       </ul>
       </div>
+
+      <!-- main content -->
+      {% block content %}
+       {% endblock %}
 
       <div class="container pt-5">
         <div class="row">
