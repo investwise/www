@@ -16,13 +16,14 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
-import .views
+# index Page
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('tutBlog.urls')),
     url(r'^news/', include('testNews.urls')),
-    url(r'^$', views.home, name='home'),
+    url(r'^$', TemplateView.as_view(template_name='home.html')),
 ]
 
 # django debug toolbar
