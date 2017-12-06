@@ -4,14 +4,15 @@
 
     <form method="POST">
         {% csrf_token %} <!-- makes form secure - important -->
-        <div class="form-row">
-          <div class="col">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
               {{ form }}
           </div>
-        </div>
 
+          <div class="col-auto">
         <button type="submit" class="btn btn-primary">Go!</button>
-
+          </div>
+      </div>
     </form>
 
  {% endblock %}
