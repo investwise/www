@@ -3,23 +3,17 @@
 {% block content %}
 
 <div class="container text-center" align="center">
-    <div class="row">
-
-      <div class="col">&nbsp;</div>
-
-      <div class="col">
-
-        <form method="POST">
-            {% csrf_token %} <!-- makes form secure - important -->
-            <div class="form-row align-items-center">
-                {{ form }} <button type="submit" class="btn btn-primary">Go!</button>
+    <form method="POST">
+        {% csrf_token %} <!-- makes form secure - important -->
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+              {{ form }}
           </div>
-        </form>
+          <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Go!</button>
+          </div>
       </div>
-
-      </div>
-      <div class="col">&nbsp;</div>
-    </div>
-
+    </form>
+  </div>
 
  {% endblock %}
