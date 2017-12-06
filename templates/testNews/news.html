@@ -4,18 +4,15 @@
 
 <div class="container text-center" align="center">
     <div class="row">
+
       <div class="col">&nbsp;</div>
+
       <div class="col">
 
         <form method="POST">
             {% csrf_token %} <!-- makes form secure - important -->
             <div class="form-row align-items-center">
-              <div class="col">
-                  {{ form }}
-              </div>
-              <div class="col">
-            <button type="submit" class="btn btn-primary">Go!</button>
-              </div>
+                {{ form }} <button type="submit" class="btn btn-primary">Go!</button>
           </div>
         </form>
       </div>
