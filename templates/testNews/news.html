@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<div class="container text-center">
     <form method="POST">
         {% csrf_token %} <!-- makes form secure - important -->
         <div class="form-row align-items-center">
@@ -13,5 +14,6 @@
           </div>
       </div>
     </form>
+  </div>
 
  {% endblock %}
