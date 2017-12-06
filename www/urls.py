@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('tutBlog.urls')),
     url(r'^news/', include('testNews.urls')),
-    url(r'^$', views.home, name='home')),
+    url(r'^$', views.home, name='home'),
 ]
 
 # django debug toolbar
