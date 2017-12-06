@@ -10,10 +10,10 @@
         <form method="POST">
             {% csrf_token %} <!-- makes form secure - important -->
             <div class="form-row align-items-center">
-              <div class="col-auto">
+              <div class="col">
                   {{ form }}
               </div>
-              <div class="col-auto">
+              <div class="col">
             <button type="submit" class="btn btn-primary">Go!</button>
               </div>
           </div>
